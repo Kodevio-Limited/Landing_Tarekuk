@@ -1,0 +1,41 @@
+services:
+  tarekuk-landing:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: tarekuk_landing
+    restart: unless-stopped
+    expose:
+      - "3000"
+    ports:
+      - "3000:3000"
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "fetch('http://127.0.0.1:3000/').then((r) => process.exit(r.ok ? 0 : 1)).catch(() => process.exit(1))",
+        ]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+    networks:
+      - dokploy-network
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.tarekuk.rule=Host(`orange.landing.codevio.com`)
+      - traefik.http.routers.tarekuk.entrypoints=websecure
+      - traefik.http.routers.tarekuk.tls.certResolver=letsencrypt
+      - traefik.http.routers.tarekuk-http.rule=Host(`orange.landing.codevio.com`)
+      - traefik.http.routers.tarekuk-http.entrypoints=web
+      - traefik.http.routers.tarekuk-http.middlewares=redirect-to-https
+      - traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https
+      - traefik.http.middlewares.redirect-to-https.redirectscheme.permanent=true
+      - traefik.docker.network=dokploy-network
+      - traefik.http.services.tarekuk.loadbalancer.server.port=3000
+
+networks:
+  dokploy-network:
+    external: true
