@@ -2,7 +2,13 @@
 
 import { useEffect, useRef, useState, type ReactNode } from "react";
 
-export default function Reveal({ children }: { children: ReactNode }) {
+interface RevealProps {
+  children: ReactNode;
+  className?: string;
+  delay?: number;
+}
+
+export default function Reveal({ children, className = "", delay = 0 }: RevealProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
 
@@ -13,14 +19,19 @@ export default function Reveal({ children }: { children: ReactNode }) {
       ([entry]) => {
         if (entry.isIntersecting) setVisible(true);
       },
-      { threshold: 0.15 }
+      { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
     );
     observer.observe(el);
     return () => observer.disconnect();
   }, []);
 
+  const delayClass = delay > 0 ? `reveal-delay-${delay}` : "";
+
   return (
-    <div ref={ref} className={`reveal ${visible ? "is-visible" : ""}`}>
+    <div
+      ref={ref}
+      className={`reveal ${visible ? "is-visible" : ""} ${delayClass} ${className}`}
+    >
       {children}
     </div>
   );

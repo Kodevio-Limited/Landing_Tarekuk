@@ -4,16 +4,16 @@ import Reveal from "@/components/shared/Reveal";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-background pt-24 sm:pt-28">
+    <section className="relative overflow-hidden bg-background pt-24 pb-8 sm:pt-28 sm:pb-10">
       <Container className="flex flex-col items-center text-center">
-        <Reveal>
+        <Reveal delay={1}>
           <h1 className="flex flex-col text-[clamp(40px,8vw,96px)] font-semibold leading-[1.15] tracking-tight">
             <span className="text-black">Send Money Home</span>
             <span className="text-yellow-400">Pay Later</span>
           </h1>
         </Reveal>
 
-        <Reveal>
+        <Reveal delay={2}>
           <p className="mt-8 max-w-[842px] text-[clamp(20px,3.6vw,36px)] font-normal leading-[1.36] text-stone-500">
             Send money to your loved ones instantly.
             <br />
@@ -21,7 +21,7 @@ export default function Hero() {
           </p>
         </Reveal>
 
-        <Reveal>
+        <Reveal delay={3}>
           <div className="mt-10">
             <Button href="#download" className="h-16 w-60">
               Download Now
@@ -30,7 +30,7 @@ export default function Hero() {
         </Reveal>
       </Container>
 
-      <Reveal>
+      <Reveal delay={4}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/mockup-hero.svg"
