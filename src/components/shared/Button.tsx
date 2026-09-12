@@ -12,7 +12,7 @@ export default function Button({
   ...props
 }: ButtonProps) {
   const base =
-    "inline-flex items-center justify-center gap-2 rounded-[57px] font-medium transition-all duration-300 ease-in-out";
+    "group inline-flex items-center justify-center gap-2 rounded-[57px] font-medium transition-all duration-300 ease-in-out";
   const styles =
     variant === "primary"
       ? "bg-yellow-400 px-8 py-4 text-lg font-semibold text-zinc-800 shadow-[0px_4px_16.3px_11px_rgba(0,0,0,0.12)] hover:bg-yellow-300 hover:shadow-[0px_8px_28px_-4px_rgba(0,0,0,0.16)] hover:-translate-y-0.5 active:translate-y-0 active:shadow-[0px_4px_16.3px_11px_rgba(0,0,0,0.12)]"
@@ -22,7 +22,10 @@ export default function Button({
     <a className={`${base} ${styles} ${className}`} {...props}>
       {children}
       {variant === "primary" && (
-        <span className="inline-block h-6 w-6" aria-hidden="true">
+        <span
+          className="inline-block h-6 w-6 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+          aria-hidden="true"
+        >
           <svg
             viewBox="0 0 24 24"
             fill="none"

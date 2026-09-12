@@ -2,25 +2,35 @@ import Reveal from "@/components/shared/Reveal";
 
 export default function About() {
   return (
-    <section className="w-full overflow-hidden py-24 sm:py-28">
-      <div className="flex w-full justify-center">
+    <section id="about" className="w-full overflow-hidden py-14 sm:py-16">
+      <div className="flex w-full justify-center px-4 sm:px-8">
         <Reveal>
-          <div className="w-[1768px] max-w-full self-stretch px-40 py-4 bg-zinc-800 rounded-2xl inline-flex flex-col justify-start items-center gap-2.5">
-            <div className="self-stretch inline-flex justify-start items-center gap-6">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                className="w-[799px] h-[532px] rounded-[38px] border-4 border-yellow-400 image-depth"
-                src="/images/about/family-sent.png"
-                alt=""
-              />
-              <div className="w-[605px] inline-flex flex-col justify-start items-end gap-14">
-                <div className="w-[486px] flex flex-col justify-center items-end gap-5">
-                  <div className="size- px-5 py-3.5 rounded-[75px] outline outline-8 outline-offset-[-7px] outline-yellow-400 inline-flex justify-center items-center gap-2.5">
-                    <div className="text-center justify-start text-white text-lg font-medium font-['Poppins'] leading-7">About Family Sent</div>
+          <div className="inline-flex w-[1768px] max-w-full flex-col items-center justify-start gap-2.5 rounded-2xl bg-zinc-800 px-40 py-4 max-lg:px-6 max-lg:py-10">
+            <div className="inline-flex flex-col items-center justify-start gap-6 self-stretch max-lg:gap-8 lg:flex-row lg:items-center lg:gap-6">
+              {/* Photo */}
+              <div className="animate-float-slow max-lg:w-full max-lg:max-w-[799px]">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  className="h-[532px] w-[799px] max-lg:h-auto max-lg:w-full rounded-[38px] border-4 border-yellow-400 image-depth"
+                  src="/images/about/family-sent.png"
+                  alt=""
+                  loading="lazy"
+                />
+              </div>
+              {/* Copy */}
+              <div className="inline-flex w-[605px] max-w-full flex-col items-end justify-start gap-14 max-lg:items-center max-lg:pb-6">
+                <div className="flex w-[486px] max-w-full flex-col items-end justify-center gap-5 max-lg:items-center">
+                  <div className="inline-flex size-auto items-center justify-center gap-2.5 rounded-[75px] px-5 py-3.5 outline outline-8 outline-offset-[-7px] outline-yellow-400">
+                    <div className="text-center text-lg font-medium leading-7 text-white">About Family Sent</div>
                   </div>
-                  <div className="self-stretch text-right justify-start"><span className="text-white text-5xl font-light font-['Poppins'] leading-[63px]">Built for families.{"\u2028"}        </span><span className="text-yellow-400 text-5xl font-medium font-['Poppins'] leading-[63px]">Designed for real life.</span></div>
+                  <div className="self-stretch text-right text-5xl font-light leading-[63px] text-white max-lg:text-center">
+                    Built for families.{"\u2028"}        <span className="text-5xl font-medium leading-[63px] text-yellow-400">Designed for real life.</span>
+                  </div>
                 </div>
-                <div className="self-stretch text-right justify-start"><span className="text-zinc-800 text-3xl font-medium font-['Poppins'] leading-10">FamilySent</span><span className="text-neutral-400 text-3xl font-normal font-['Poppins'] leading-10"> helps you send money home when it matters most — with the flexibility to repay in a way that works for you.</span></div>
+                <div className="self-stretch text-right max-lg:text-center">
+                  <span className="text-3xl font-medium leading-10 text-zinc-800">FamilySent</span>
+                  <span className="text-3xl font-normal leading-10 text-neutral-400"> helps you send money home when it matters most — with the flexibility to repay in a way that works for you.</span>
+                </div>
               </div>
             </div>
           </div>
