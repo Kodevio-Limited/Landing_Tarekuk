@@ -47,22 +47,22 @@ export default function Navbar() {
   return (
     <header className="fixed left-1/2 top-[21px] z-50 w-[min(1087px,calc(100%-32px))] -translate-x-1/2">
       <nav
-        className={`flex h-[75px] items-center justify-between rounded-[154px] bg-ink px-6 text-background transition-shadow duration-500 sm:px-8 ${
+        className={`grid h-[72px] grid-cols-[1fr_auto_1fr] items-center rounded-[999px] bg-ink pl-7 pr-2.5 text-background transition-shadow duration-500 max-md:flex max-md:justify-between ${
           scrolled
             ? "shadow-[0_18px_50px_-12px_rgba(0,0,0,0.5)]"
             : "shadow-[0_8px_32px_-12px_rgba(0,0,0,0.35)]"
         }`}
       >
-        <a href="#top" className="group flex shrink-0 items-center" aria-label="Familysent — back to top">
+        <a href="#top" className="group flex w-fit shrink-0 items-center" aria-label="Familysent — back to top">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/images/footer/logo.png"
+            src="/images/footer/logo-nav.png"
             alt="Familysent logo"
-            className="h-9 w-auto object-contain transition-transform duration-500 ease-out group-hover:scale-105 sm:h-10"
+            className="h-6 w-auto object-contain transition-transform duration-500 ease-out group-hover:scale-105 md:h-7"
           />
         </a>
 
-        <ul className="hidden items-center gap-8 md:flex">
+        <ul className="hidden items-center gap-9 md:flex">
           {NAV_LINKS.map((link) => {
             const isActive = active === link.href;
             return (
@@ -81,9 +81,14 @@ export default function Navbar() {
           })}
         </ul>
 
-        <Button href="#download" className="hidden !px-8 sm:inline-flex">
-          Download Now
-        </Button>
+        <div className="flex justify-end">
+          <Button
+            href="#download"
+            className="hidden !rounded-[999px] !px-6 !py-2.5 !text-base md:inline-flex"
+          >
+            Download Now
+          </Button>
+        </div>
 
         {/* Mobile hamburger */}
         <button
