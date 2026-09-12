@@ -9,13 +9,15 @@ export default function About() {
             <div className="inline-flex flex-col items-center justify-start gap-6 self-stretch max-lg:gap-8 lg:flex-row lg:items-center lg:gap-6">
               {/* Photo */}
               <div className="animate-float-slow max-lg:w-full max-lg:max-w-[799px]">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  className="h-[532px] w-[799px] max-lg:h-auto max-lg:w-full rounded-[38px] border-4 border-yellow-400 image-depth"
-                  src="/images/about/family-sent.png"
-                  alt=""
-                  loading="lazy"
-                />
+                <div className="rounded-[38px] bg-yellow-400 p-1.5">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    className="h-[532px] w-[799px] max-lg:h-auto max-lg:w-full rounded-[30px] bg-white p-2.5 image-depth"
+                    src="/images/about/family-sent.png"
+                    alt=""
+                    loading="lazy"
+                  />
+                </div>
               </div>
               {/* Copy */}
               <div className="inline-flex w-[605px] max-w-full flex-col items-end justify-start gap-14 max-lg:items-center max-lg:pb-6">

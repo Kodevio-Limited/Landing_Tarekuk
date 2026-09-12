@@ -86,7 +86,8 @@ export default function Footer() {
               </div>
             </div>
 
-            <div className="inline-flex w-[523px] max-w-full flex-col items-start gap-16 max-xl:w-full">
+            {/* w-[576px]: two w-64 (256px) badges + 24px gap fit side-by-side without wrapping */}
+            <div className="inline-flex w-[576px] max-w-full flex-col items-start gap-16 max-xl:w-full">
               <div className="whitespace-nowrap text-3xl font-medium leading-10 text-white">Download From</div>
               <div className="inline-flex flex-wrap items-center gap-6 self-stretch">
                 <a
@@ -118,7 +119,11 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t-4 border-dashed border-yellow-400" aria-hidden="true" />
+        {/* Full-bleed divider: escapes the padded column so it spans the entire screen */}
+        <div
+          className="relative -mx-6 border-t-4 border-dashed border-yellow-400 sm:-mx-10 xl:-mx-[100px]"
+          aria-hidden="true"
+        />
 
         <div className="inline-flex min-h-12 w-full flex-col items-center justify-between gap-6 sm:flex-row">
           <div className="text-xl font-normal leading-7 text-neutral-400">© 2026 Tarekuk All rights reserved.</div>

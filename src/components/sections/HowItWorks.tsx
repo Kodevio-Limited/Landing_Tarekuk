@@ -34,7 +34,7 @@ export default function HowItWorks() {
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         className={`absolute transition-transform duration-500 group-hover:scale-105 ${
-                          step === 1
+                          step === 1  
                             ? "h-56 w-64 left-[16px] top-[50px]"
                             : step === 2
                               ? "size-72 left-[-55px] top-[33px]"
