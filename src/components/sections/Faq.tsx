@@ -95,7 +95,7 @@ export default function Faq() {
     <section id="faq" className="relative w-full overflow-hidden py-14 sm:py-16">
       <div className="aurora animate-aurora-slow pointer-events-none absolute -right-24 top-24 -z-[1] size-[340px] bg-yellow-200/30" aria-hidden="true" />
       <div className="flex w-full justify-center">
-        <div className="flex w-full max-w-[1180px] flex-col items-center gap-16 px-4 sm:px-8">
+        <div className="flex w-full max-w-[1440px] flex-col items-center gap-16 px-4 sm:px-8">
           <Reveal className="flex w-full max-w-[486px] flex-col items-center gap-5">
             <SectionPill>FAQ</SectionPill>
             <SectionHeading>
@@ -104,7 +104,7 @@ export default function Faq() {
             </SectionHeading>
           </Reveal>
           <Reveal delay={1} className="w-full">
-            <div className="grid grid-cols-1 items-start gap-5 lg:grid-cols-2 lg:gap-x-6">
+            <div className="grid grid-cols-1 items-start gap-5 lg:grid-cols-2 lg:gap-x-14">
               {[FAQ_ITEMS.slice(0, 4), FAQ_ITEMS.slice(4)].map((column, colIdx) => (
                 <div key={colIdx} className="flex flex-col gap-5">
                   {column.map((item, i) => {

@@ -45,7 +45,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header className="fixed left-1/2 top-[21px] z-50 w-[min(1087px,calc(100%-32px))] -translate-x-1/2">
+    <header className="fixed left-1/2 top-[21px] z-50 w-[calc(100%-32px)] -translate-x-1/2">
       <nav
         className={`flex h-[75px] items-center justify-between rounded-[154px] bg-ink px-6 text-background transition-shadow duration-500 sm:px-8 ${
           scrolled
