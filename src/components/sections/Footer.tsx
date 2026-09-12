@@ -40,7 +40,7 @@ const SOCIALS = [
 export default function Footer() {
   return (
     <footer className="relative w-full overflow-hidden bg-stone-900">
-      <div className="relative mx-auto flex w-full max-w-[1440px] flex-col gap-12 px-6 py-16 sm:px-10 sm:py-20 lg:px-20">
+      <div className="relative mx-auto flex w-full max-w-[1928px] flex-col gap-12 px-6 py-16 sm:px-10 sm:py-20 xl:px-[100px]">
         <div className="flex flex-col gap-12 max-w-full lg:flex-row lg:justify-between">
           {/* Brand + CTA */}
           <div className="flex shrink-0 flex-col items-start gap-8">
