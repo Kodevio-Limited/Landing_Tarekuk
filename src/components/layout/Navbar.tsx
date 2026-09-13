@@ -56,22 +56,22 @@ export default function Navbar() {
       )}
 
       <nav
-        className={`relative z-50 grid h-[64px] grid-cols-[1fr_auto_1fr] items-center rounded-[999px] bg-ink px-4 text-background transition-all duration-500 max-md:flex max-md:justify-between sm:h-[72px] sm:pl-7 sm:pr-2.5 ${
+        className={`relative z-50 flex h-[64px] items-center justify-between rounded-[999px] bg-ink px-4 text-background transition-all duration-500 sm:h-[72px] sm:px-6 lg:px-7 ${
           scrolled
             ? "shadow-[0_18px_50px_-12px_rgba(0,0,0,0.5)]"
             : "shadow-[0_8px_32px_-12px_rgba(0,0,0,0.35)]"
         }`}
       >
-        <a href="#top" className="group flex w-fit shrink-0 items-center" aria-label="Familysent — back to top">
+        <a href="#top" className="group flex shrink-0 items-center" aria-label="Familysent — back to top">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/images/logo/logo.png"
             alt="Familysent logo"
-            className="h-5 w-auto object-contain transition-transform duration-500 ease-out group-hover:scale-105 sm:h-6 md:h-7"
+            className="h-5 w-auto object-contain transition-transform duration-500 ease-out group-hover:scale-105 sm:h-6 md:h-6 lg:h-7"
           />
         </a>
 
-        <ul className="hidden items-center gap-12 md:flex">
+        <ul className="hidden flex-1 items-center justify-center gap-4 px-4 text-xs font-medium md:flex lg:gap-8 lg:text-sm xl:gap-12">
           {NAV_LINKS.map((link) => {
             const isActive = active === link.href;
             return (
@@ -79,7 +79,7 @@ export default function Navbar() {
                 <a
                   href={link.href}
                   aria-current={isActive ? "true" : undefined}
-                  className={`link-sweep relative text-sm font-medium transition-colors duration-300 ${
+                  className={`link-sweep relative whitespace-nowrap transition-colors duration-300 ${
                     isActive ? "text-primary" : "text-background/70 hover:text-background"
                   }`}
                 >
@@ -90,10 +90,10 @@ export default function Navbar() {
           })}
         </ul>
 
-        <div className="hidden justify-end md:flex">
+        <div className="hidden shrink-0 justify-end md:flex">
           <Button
             href="#download"
-            className="!rounded-[999px] !px-6 !py-2.5 !text-base"
+            className="!rounded-[999px] !px-4 !py-2 !text-xs sm:!px-5 sm:!py-2.5 sm:!text-sm lg:!px-6 lg:!text-base"
           >
             Download Now
           </Button>

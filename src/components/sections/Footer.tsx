@@ -40,30 +40,34 @@ const SOCIALS = [
 export default function Footer() {
   return (
     <footer className="relative w-full overflow-hidden bg-stone-900">
-      <div className="relative mx-auto flex w-full max-w-[1928px] flex-col gap-12 px-6 pt-16 pb-8 sm:px-10 sm:pt-20 sm:pb-10 xl:px-[100px]">
-        <div className="flex flex-col gap-12 max-w-full lg:flex-row lg:justify-between">
+      <div className="relative mx-auto flex w-full max-w-[1928px] flex-col gap-12 px-6 pt-12 pb-8 sm:px-10 sm:pt-16 sm:pb-10 xl:px-[100px]">
+        {/* Main Content Layout */}
+        <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between lg:gap-12">
           {/* Brand + CTA */}
-          <div className="flex shrink-0 flex-col items-start gap-8">
+          <div className="flex shrink-0 flex-col items-start gap-6 sm:gap-8">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/images/footer/logo.png"
               alt="Familysent logo"
-              className="h-[111px] w-[431px] max-w-full object-contain"
+              className="h-16 w-auto max-w-[300px] object-contain sm:h-24 sm:max-w-[431px]"
               loading="lazy"
             />
             <Button href="#download">Download Now</Button>
           </div>
 
-          {/* Link columns + badges */}
-          <div className="flex min-w-0 flex-col gap-12 sm:flex-row sm:gap-[150px]">
-            <div className="inline-flex w-40 flex-col items-start gap-6">
-              <div className="whitespace-nowrap text-3xl font-medium leading-10 text-white">Quick Links</div>
-              <div className="flex flex-col items-start gap-5">
+          {/* Link Columns + Download Badges */}
+          <div className="flex flex-wrap items-start justify-between gap-8 sm:gap-10 md:gap-12 xl:gap-20">
+            {/* Quick Links */}
+            <div className="flex flex-col items-start gap-4 sm:gap-6">
+              <h3 className="whitespace-nowrap text-xl font-medium text-white sm:text-2xl lg:text-3xl">
+                Quick Links
+              </h3>
+              <div className="flex flex-col items-start gap-3 sm:gap-4">
                 {QUICK_LINKS.map((link) => (
                   <a
                     key={link.label}
                     href={link.href}
-                    className="link-sweep whitespace-nowrap text-xl font-normal leading-7 text-zinc-400 transition-colors duration-300 hover:text-primary"
+                    className="link-sweep whitespace-nowrap text-base font-normal text-zinc-400 transition-colors duration-300 hover:text-primary sm:text-lg lg:text-xl"
                   >
                     {link.label}
                   </a>
@@ -71,14 +75,17 @@ export default function Footer() {
               </div>
             </div>
 
-            <div className="inline-flex w-40 flex-col items-start gap-6">
-              <div className="whitespace-nowrap text-3xl font-medium leading-10 text-white">Resources</div>
-              <div className="flex flex-col items-start gap-5">
+            {/* Resources */}
+            <div className="flex flex-col items-start gap-4 sm:gap-6">
+              <h3 className="whitespace-nowrap text-xl font-medium text-white sm:text-2xl lg:text-3xl">
+                Resources
+              </h3>
+              <div className="flex flex-col items-start gap-3 sm:gap-4">
                 {RESOURCES.map((r) => (
                   <a
                     key={r.label}
                     href={r.href}
-                    className="link-sweep whitespace-nowrap text-xl font-normal leading-7 text-zinc-400 transition-colors duration-300 hover:text-primary"
+                    className="link-sweep whitespace-nowrap text-base font-normal text-zinc-400 transition-colors duration-300 hover:text-primary sm:text-lg lg:text-xl"
                   >
                     {r.label}
                   </a>
@@ -86,48 +93,55 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* w-[576px]: two w-64 (256px) badges + 24px gap fit side-by-side without wrapping */}
-            <div className="inline-flex w-[576px] max-w-full flex-col items-start gap-16 max-xl:w-full">
-              <div className="whitespace-nowrap text-3xl font-medium leading-10 text-white">Download From</div>
-              <div className="inline-flex flex-wrap items-center gap-6 self-stretch">
+            {/* Download From */}
+            <div className="flex flex-col items-start gap-4 sm:gap-6 max-sm:w-full">
+              <h3 className="whitespace-nowrap text-xl font-medium text-white sm:text-2xl lg:text-3xl">
+                Download From
+              </h3>
+              <div className="flex flex-wrap items-center gap-4 sm:gap-6">
                 <a
                   href="#download"
-                  className="group relative inline-flex h-20 w-64 rounded-[54.05px] bg-zinc-800 outline outline-1 outline-offset-[-0.89px] outline-gray-200 transition-all duration-300 hover:-translate-y-0.5 hover:bg-zinc-700/80 hover:outline-primary/60"
+                  className="group relative flex h-[72px] w-[230px] items-center gap-4 rounded-[54px] bg-zinc-800 px-4 outline outline-1 outline-offset-[-0.89px] outline-gray-200 transition-all duration-300 hover:-translate-y-0.5 hover:bg-zinc-700/80 hover:outline-primary/60 sm:h-20 sm:w-64"
                 >
-                  <div className="absolute left-[6.20px] top-[6.20px] size-16 rounded-full bg-neutral-50 transition-transform duration-300 group-hover:scale-105" />
-                  <div className="absolute left-[86.84px] top-[8.86px] inline-flex w-32 flex-col items-start gap-2">
-                    <div className="self-stretch text-sm font-normal leading-5 text-gray-200">Download on the</div>
-                    <div className="self-stretch text-xl font-medium leading-7 text-neutral-50">App Store</div>
+                  <div className="flex size-12 shrink-0 items-center justify-center rounded-full bg-neutral-50 transition-transform duration-300 group-hover:scale-105 sm:size-14">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src="/images/footer/apple-logo.svg" alt="App Store" className="size-6 sm:size-8" />
                   </div>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/images/footer/apple-logo.svg" alt="App Store" className="absolute left-[19.49px] top-[19.50px] size-9" />
+                  <div className="flex flex-col items-start">
+                    <span className="text-xs font-normal text-gray-200">Download on the</span>
+                    <span className="text-base font-medium text-neutral-50 sm:text-lg">App Store</span>
+                  </div>
                 </a>
+
                 <a
                   href="#download"
-                  className="group relative inline-flex h-20 w-64 rounded-[54.05px] bg-zinc-800 outline outline-1 outline-offset-[-0.89px] outline-gray-200 transition-all duration-300 hover:-translate-y-0.5 hover:bg-zinc-700/80 hover:outline-primary/60"
+                  className="group relative flex h-[72px] w-[230px] items-center gap-4 rounded-[54px] bg-zinc-800 px-4 outline outline-1 outline-offset-[-0.89px] outline-gray-200 transition-all duration-300 hover:-translate-y-0.5 hover:bg-zinc-700/80 hover:outline-primary/60 sm:h-20 sm:w-64"
                 >
-                  <div className="absolute left-[6.20px] top-[6.20px] size-16 rounded-full bg-neutral-50 transition-transform duration-300 group-hover:scale-105" />
-                  <div className="absolute left-[86.84px] top-[8.86px] inline-flex w-32 flex-col items-start gap-2">
-                    <div className="self-stretch text-sm font-normal leading-5 text-gray-200">Download on the</div>
-                    <div className="self-stretch text-xl font-medium leading-7 text-neutral-50">Google Play</div>
+                  <div className="flex size-12 shrink-0 items-center justify-center rounded-full bg-neutral-50 transition-transform duration-300 group-hover:scale-105 sm:size-14">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src="/images/footer/playstore.svg" alt="Google Play" className="size-6 sm:size-8" />
                   </div>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/images/footer/playstore.svg" alt="Google Play" className="absolute left-[19.49px] top-[19.50px] size-9" />
+                  <div className="flex flex-col items-start">
+                    <span className="text-xs font-normal text-gray-200">Download on the</span>
+                    <span className="text-base font-medium text-neutral-50 sm:text-lg">Google Play</span>
+                  </div>
                 </a>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Full-bleed divider: escapes the padded column so it spans the entire screen */}
+        {/* Full-bleed divider */}
         <div
           className="relative -mx-6 border-t-4 border-dashed border-primary sm:-mx-10 xl:-mx-[100px]"
           aria-hidden="true"
         />
 
         <div className="inline-flex min-h-12 w-full flex-col items-center justify-between gap-6 sm:flex-row">
-          <div className="text-xl font-normal leading-7 text-neutral-400">© 2026 FamilySent. All rights reserved.</div>
-          <div className="flex items-center gap-6">
+          <div className="text-base font-normal text-neutral-400 sm:text-lg lg:text-xl">
+            © 2026 FamilySent. All rights reserved.
+          </div>
+          <div className="flex items-center gap-4 sm:gap-6">
             {SOCIALS.map((social) => (
               <a
                 key={social.label}
@@ -135,9 +149,9 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={social.label}
-                className="flex size-12 items-center justify-center rounded-full transition-all duration-300 hover:-translate-y-1 hover:bg-white/5"
+                className="flex size-10 items-center justify-center rounded-full transition-all duration-300 hover:-translate-y-1 hover:bg-white/5 sm:size-12"
               >
-                <svg className="size-6 fill-zinc-400 transition-colors duration-300 hover:fill-primary" viewBox="0 0 24 24" aria-hidden="true">
+                <svg className="size-5 fill-zinc-400 transition-colors duration-300 hover:fill-primary sm:size-6" viewBox="0 0 24 24" aria-hidden="true">
                   <path d={social.path} />
                 </svg>
               </a>
