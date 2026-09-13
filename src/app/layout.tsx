@@ -9,9 +9,14 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Tarekuk — Send Money Home",
+  title: "Family Sent — Send Money Home",
   description:
     "Send money to your loved ones instantly. Repay later when it's convenient for you.",
+  icons: {
+    icon: "/images/logo/logo-half.png",
+    shortcut: "/images/logo/logo-half.png",
+    apple: "/images/logo/logo-half.png",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -56,13 +56,13 @@ export default function Navbar() {
         <a href="#top" className="group flex w-fit shrink-0 items-center" aria-label="Familysent — back to top">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/images/footer/logo-nav.png"
+            src="/images/logo/logo.png"
             alt="Familysent logo"
             className="h-6 w-auto object-contain transition-transform duration-500 ease-out group-hover:scale-105 md:h-7"
           />
         </a>
 
-        <ul className="hidden items-center gap-9 md:flex">
+        <ul className="hidden items-center gap-12 md:flex">
           {NAV_LINKS.map((link) => {
             const isActive = active === link.href;
             return (
