@@ -1,38 +1,46 @@
-import Reveal from "@/components/shared/Reveal";
+import Reveal from "@/components/motion/Reveal";
 
 export default function About() {
   return (
-    <section id="about" className="w-full overflow-hidden py-14 sm:py-16">
-      <div className="flex w-full justify-center px-4 sm:px-8">
-        <Reveal>
-          <div className="inline-flex w-[1768px] max-w-full flex-col items-center justify-start gap-2.5 rounded-2xl bg-zinc-800 px-40 py-4 max-lg:px-6 max-lg:py-10">
-            <div className="inline-flex flex-col items-center justify-start gap-6 self-stretch max-lg:gap-8 lg:flex-row lg:items-center lg:gap-6">
-              {/* Photo */}
-              <div className="animate-float-slow max-lg:w-full max-lg:max-w-[799px]">
-                <div className="rounded-[38px] bg-yellow-400 p-1.5">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    className="h-[532px] w-[799px] max-lg:h-auto max-lg:w-full rounded-[30px] bg-white p-2.5 image-depth"
-                    src="/images/about/family-sent.png"
-                    alt=""
-                    loading="lazy"
-                  />
-                </div>
+    <section id="about" className="w-full overflow-hidden py-14 sm:py-20">
+      <div className="mx-auto flex w-[1768px] max-w-full justify-center px-4 sm:px-8">
+        <Reveal className="w-full">
+          <div className="w-full rounded-[28px] bg-[#34383E] p-6 sm:p-10 lg:p-12">
+            <div className="grid w-full grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-14">
+              {/* Left Column: Photo */}
+              <div className="w-full overflow-hidden rounded-[24px]">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/images/about/family-sent.png"
+                  alt="Family Sent community"
+                  className="h-auto w-full object-cover"
+                  loading="lazy"
+                />
               </div>
-              {/* Copy */}
-              <div className="inline-flex w-[605px] max-w-full flex-col items-end justify-start gap-14 max-lg:items-center max-lg:pb-6">
-                <div className="flex w-[486px] max-w-full flex-col items-end justify-center gap-5 max-lg:items-center">
-                  <div className="inline-flex size-auto items-center justify-center gap-2.5 rounded-[75px] px-5 py-3.5 outline outline-8 outline-offset-[-7px] outline-yellow-400">
-                    <div className="text-center text-lg font-medium leading-7 text-white">About Family Sent</div>
-                  </div>
-                  <div className="self-stretch text-right text-5xl font-light leading-[63px] text-white max-lg:text-center">
-                    Built for families.{"\u2028"}        <span className="text-5xl font-medium leading-[63px] text-yellow-400">Designed for real life.</span>
-                  </div>
+
+              {/* Right Column: Copy aligned right */}
+              <div className="flex flex-col items-end text-right max-lg:items-center max-lg:text-center">
+                {/* Pill */}
+                <div className="inline-flex items-center justify-center rounded-full border border-[#FFC107] bg-transparent px-6 py-2">
+                  <span className="text-base font-medium text-white sm:text-lg">
+                    About Family Sent
+                  </span>
                 </div>
-                <div className="self-stretch text-right max-lg:text-center">
-                  <span className="text-3xl font-medium leading-10 text-zinc-800">FamilySent</span>
-                  <span className="text-3xl font-normal leading-10 text-neutral-400"> helps you send money home when it matters most — with the flexibility to repay in a way that works for you.</span>
+
+                {/* Heading */}
+                <div className="mt-6 flex flex-col items-end max-lg:items-center">
+                  <h2 className="text-3xl font-light italic leading-tight text-white sm:text-4xl lg:text-[46px]">
+                    Built for families.
+                  </h2>
+                  <p className="mt-1 text-3xl font-bold leading-tight text-primary sm:text-4xl lg:text-[46px]">
+                    Designed for real life.
+                  </p>
                 </div>
+
+                {/* Description */}
+                <p className="mt-8 max-w-lg text-base font-normal leading-relaxed text-[#A3A3A3] sm:text-xl max-lg:text-center">
+                  helps you send money home when it matters most — with the flexibility to repay in a way that works for you.
+                </p>
               </div>
             </div>
           </div>

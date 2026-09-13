@@ -90,7 +90,7 @@ body {
   color: #111;
 }
 
-/* Premium slim scrollbar */
+/* Slim scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -109,164 +109,39 @@ body {
   border-radius: 4px;
 }
 
-/* ------------------------------------------------------------------ */
-/* Warm atmospheric background with slowly drifting aurora glow       */
-/* ------------------------------------------------------------------ */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -2;
-  background:
-    radial-gradient(ellipse 80% 50% at 50% 40%, rgba(255, 193, 7, 0.07) 0%, transparent 70%),
-    radial-gradient(ellipse 60% 40% at 50% 50%, rgba(255, 193, 7, 0.04) 0%, transparent 60%);
-  pointer-events: none;
-}
-
-.aurora {
-  position: absolute;
-  border-radius: 9999px;
-  filter: blur(90px);
-  pointer-events: none;
-  will-change: transform, opacity;
-}
-
-@keyframes aurora-drift {
-  0%, 100% { transform: translate3d(0, 0, 0) scale(1); opacity: 0.55; }
-  33%      { transform: translate3d(40px, -30px, 0) scale(1.12); opacity: 0.75; }
-  66%      { transform: translate3d(-30px, 25px, 0) scale(0.94); opacity: 0.5; }
-}
-.animate-aurora {
-  animation: aurora-drift 14s ease-in-out infinite;
-}
-.animate-aurora-slow {
-  animation: aurora-drift 22s ease-in-out infinite reverse;
-}
-
-/* ------------------------------------------------------------------ */
-/* Scroll reveal animation                                            */
-/* ------------------------------------------------------------------ */
-.reveal {
-  opacity: 0;
-  transform: translateY(28px) scale(0.985);
-  filter: blur(6px);
-  transition:
-    opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-    filter 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.reveal.is-visible {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-  filter: blur(0);
-}
-
-/* Stagger delays for children */
-.reveal-delay-1 { transition-delay: 0.08s; }
-.reveal-delay-2 { transition-delay: 0.16s; }
-.reveal-delay-3 { transition-delay: 0.24s; }
-.reveal-delay-4 { transition-delay: 0.32s; }
-
 /* Card hover elevation */
 .card-hover {
   transition:
-    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .card-hover:hover {
-  transform: translateY(-6px);
+  transform: translateY(-4px);
   box-shadow:
-    0 24px 48px -12px rgba(0, 0, 0, 0.14),
-    0 8px 20px -6px rgba(0, 0, 0, 0.08);
+    0 20px 40px -12px rgba(0, 0, 0, 0.12),
+    0 6px 16px -4px rgba(0, 0, 0, 0.06);
 }
 
 /* Button hover lift */
 .btn-lift {
   transition:
-    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-    background-color 0.3s ease;
+    transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 0.25s ease;
 }
 
 .btn-lift:hover {
   transform: translateY(-2px);
   box-shadow:
-    0 8px 28px -4px rgba(0, 0, 0, 0.16),
-    0 4px 12px -2px rgba(0, 0, 0, 0.1);
+    0 8px 24px -4px rgba(0, 0, 0, 0.14),
+    0 4px 10px -2px rgba(0, 0, 0, 0.08);
 }
 
-/* Image shadow treatment */
+/* Image depth shadow treatment */
 .image-depth {
   filter: drop-shadow(0 8px 32px rgba(0, 0, 0, 0.1))
           drop-shadow(0 2px 8px rgba(0, 0, 0, 0.06));
-}
-
-/* Smooth image reveal */
-.img-reveal {
-  opacity: 0;
-  transform: scale(0.97);
-  transition:
-    opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.img-reveal.is-visible {
-  opacity: 1;
-  transform: scale(1);
-}
-
-/* ------------------------------------------------------------------ */
-/* Premium motion utilities                                           */
-/* ------------------------------------------------------------------ */
-
-/* Gentle floating (phone mockups, decorative cards) */
-@keyframes float-y {
-  0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(-14px); }
-}
-.animate-float {
-  animation: float-y 6s ease-in-out infinite;
-}
-.animate-float-slow {
-  animation: float-y 9s ease-in-out infinite;
-}
-.animate-float-delayed {
-  animation: float-y 7s ease-in-out 1.2s infinite;
-}
-
-/* Hero entrance choreography */
-@keyframes pop-in {
-  0%   { opacity: 0; transform: translateY(34px) scale(0.96); filter: blur(10px); }
-  100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
-}
-.animate-pop-in {
-  opacity: 0;
-  animation: pop-in 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-.pop-1 { animation-delay: 0.1s; }
-.pop-2 { animation-delay: 0.25s; }
-.pop-3 { animation-delay: 0.4s; }
-.pop-4 { animation-delay: 0.6s; }
-
-/* Shimmering gold sweep for text and badges */
-@keyframes shimmer-sweep {
-  0%   { background-position: -200% center; }
-  100% { background-position: 200% center; }
-}
-.shimmer-text {
-  background: linear-gradient(
-    100deg,
-    #f59e0b 20%,
-    #fde68a 40%,
-    #f59e0b 60%
-  );
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  animation: shimmer-sweep 5s linear infinite;
 }
 
 /* Gold gradient headline accent */
@@ -275,23 +150,6 @@ body::before {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-}
-
-/* Hairline gold ring that slowly rotates around circular badges */
-@keyframes spin-slow {
-  to { transform: rotate(360deg); }
-}
-.animate-spin-slow {
-  animation: spin-slow 16s linear infinite;
-}
-
-/* Pulsing halo behind key CTAs */
-@keyframes halo-pulse {
-  0%, 100% { transform: scale(1); opacity: 0.5; }
-  50%      { transform: scale(1.18); opacity: 0.2; }
-}
-.animate-halo {
-  animation: halo-pulse 3.2s ease-in-out infinite;
 }
 
 /* Infinite marquee (trust strip) */
@@ -308,15 +166,6 @@ body::before {
 }
 .marquee-paused:hover .animate-marquee {
   animation-play-state: paused;
-}
-
-/* Twinkling sparkles */
-@keyframes twinkle {
-  0%, 100% { opacity: 0.15; transform: scale(0.7) rotate(0deg); }
-  50%      { opacity: 1; transform: scale(1.15) rotate(20deg); }
-}
-.animate-twinkle {
-  animation: twinkle 3.4s ease-in-out infinite;
 }
 
 /* Underline sweep for footer / inline links */

@@ -1,4 +1,4 @@
-import Button from "@/components/shared/Button";
+import Button from "@/components/ui/Button";
 
 const QUICK_LINKS = [
   { label: "How it Works", href: "#how-it-works" },
@@ -63,7 +63,7 @@ export default function Footer() {
                   <a
                     key={link.label}
                     href={link.href}
-                    className="link-sweep whitespace-nowrap text-xl font-normal leading-7 text-zinc-400 transition-colors duration-300 hover:text-yellow-400"
+                    className="link-sweep whitespace-nowrap text-xl font-normal leading-7 text-zinc-400 transition-colors duration-300 hover:text-primary"
                   >
                     {link.label}
                   </a>
@@ -78,7 +78,7 @@ export default function Footer() {
                   <a
                     key={r.label}
                     href={r.href}
-                    className="link-sweep whitespace-nowrap text-xl font-normal leading-7 text-zinc-400 transition-colors duration-300 hover:text-yellow-400"
+                    className="link-sweep whitespace-nowrap text-xl font-normal leading-7 text-zinc-400 transition-colors duration-300 hover:text-primary"
                   >
                     {r.label}
                   </a>
@@ -92,7 +92,7 @@ export default function Footer() {
               <div className="inline-flex flex-wrap items-center gap-6 self-stretch">
                 <a
                   href="#download"
-                  className="group relative inline-flex h-20 w-64 rounded-[54.05px] bg-zinc-800 outline outline-1 outline-offset-[-0.89px] outline-gray-200 transition-all duration-300 hover:-translate-y-0.5 hover:bg-zinc-700/80 hover:outline-yellow-400/60"
+                  className="group relative inline-flex h-20 w-64 rounded-[54.05px] bg-zinc-800 outline outline-1 outline-offset-[-0.89px] outline-gray-200 transition-all duration-300 hover:-translate-y-0.5 hover:bg-zinc-700/80 hover:outline-primary/60"
                 >
                   <div className="absolute left-[6.20px] top-[6.20px] size-16 rounded-full bg-neutral-50 transition-transform duration-300 group-hover:scale-105" />
                   <div className="absolute left-[86.84px] top-[8.86px] inline-flex w-32 flex-col items-start gap-2">
@@ -104,7 +104,7 @@ export default function Footer() {
                 </a>
                 <a
                   href="#download"
-                  className="group relative inline-flex h-20 w-64 rounded-[54.05px] bg-zinc-800 outline outline-1 outline-offset-[-0.89px] outline-gray-200 transition-all duration-300 hover:-translate-y-0.5 hover:bg-zinc-700/80 hover:outline-yellow-400/60"
+                  className="group relative inline-flex h-20 w-64 rounded-[54.05px] bg-zinc-800 outline outline-1 outline-offset-[-0.89px] outline-gray-200 transition-all duration-300 hover:-translate-y-0.5 hover:bg-zinc-700/80 hover:outline-primary/60"
                 >
                   <div className="absolute left-[6.20px] top-[6.20px] size-16 rounded-full bg-neutral-50 transition-transform duration-300 group-hover:scale-105" />
                   <div className="absolute left-[86.84px] top-[8.86px] inline-flex w-32 flex-col items-start gap-2">
@@ -121,12 +121,12 @@ export default function Footer() {
 
         {/* Full-bleed divider: escapes the padded column so it spans the entire screen */}
         <div
-          className="relative -mx-6 border-t-4 border-dashed border-yellow-400 sm:-mx-10 xl:-mx-[100px]"
+          className="relative -mx-6 border-t-4 border-dashed border-primary sm:-mx-10 xl:-mx-[100px]"
           aria-hidden="true"
         />
 
         <div className="inline-flex min-h-12 w-full flex-col items-center justify-between gap-6 sm:flex-row">
-          <div className="text-xl font-normal leading-7 text-neutral-400">© 2026 Tarekuk All rights reserve</div>
+          <div className="text-xl font-normal leading-7 text-neutral-400">© 2026 FamilySent. All rights reserved.</div>
           <div className="flex items-center gap-6">
             {SOCIALS.map((social) => (
               <a
@@ -137,7 +137,7 @@ export default function Footer() {
                 aria-label={social.label}
                 className="flex size-12 items-center justify-center rounded-full transition-all duration-300 hover:-translate-y-1 hover:bg-white/5"
               >
-                <svg className="size-6 fill-zinc-400 transition-colors duration-300 hover:fill-yellow-400" viewBox="0 0 24 24" aria-hidden="true">
+                <svg className="size-6 fill-zinc-400 transition-colors duration-300 hover:fill-primary" viewBox="0 0 24 24" aria-hidden="true">
                   <path d={social.path} />
                 </svg>
               </a>

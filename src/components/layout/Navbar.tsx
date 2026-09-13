@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Button from "@/components/shared/Button";
+import Button from "@/components/ui/Button";
 
 const NAV_LINKS = [
   { label: "Pay Later", href: "#pay-later" },
@@ -45,9 +45,18 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header className="fixed left-1/2 top-[21px] z-50 w-[min(1087px,calc(100%-32px))] -translate-x-1/2">
+    <header className="fixed left-1/2 top-[16px] z-50 w-[min(1087px,calc(100%-24px))] -translate-x-1/2 sm:top-[21px] sm:w-[min(1087px,calc(100%-32px))]">
+      {/* Mobile backdrop for closing menu */}
+      {menuOpen && (
+        <div
+          className="fixed inset-0 z-40 bg-black/30 backdrop-blur-xs md:hidden"
+          onClick={() => setMenuOpen(false)}
+          aria-hidden="true"
+        />
+      )}
+
       <nav
-        className={`grid h-[72px] grid-cols-[1fr_auto_1fr] items-center rounded-[999px] bg-ink pl-7 pr-2.5 text-background transition-shadow duration-500 max-md:flex max-md:justify-between ${
+        className={`relative z-50 grid h-[64px] grid-cols-[1fr_auto_1fr] items-center rounded-[999px] bg-ink px-4 text-background transition-all duration-500 max-md:flex max-md:justify-between sm:h-[72px] sm:pl-7 sm:pr-2.5 ${
           scrolled
             ? "shadow-[0_18px_50px_-12px_rgba(0,0,0,0.5)]"
             : "shadow-[0_8px_32px_-12px_rgba(0,0,0,0.35)]"
@@ -58,7 +67,7 @@ export default function Navbar() {
           <img
             src="/images/logo/logo.png"
             alt="Familysent logo"
-            className="h-6 w-auto object-contain transition-transform duration-500 ease-out group-hover:scale-105 md:h-7"
+            className="h-5 w-auto object-contain transition-transform duration-500 ease-out group-hover:scale-105 sm:h-6 md:h-7"
           />
         </a>
 
@@ -71,7 +80,7 @@ export default function Navbar() {
                   href={link.href}
                   aria-current={isActive ? "true" : undefined}
                   className={`link-sweep relative text-sm font-medium transition-colors duration-300 ${
-                    isActive ? "text-yellow-400" : "text-background/70 hover:text-background"
+                    isActive ? "text-primary" : "text-background/70 hover:text-background"
                   }`}
                 >
                   {link.label}
@@ -81,10 +90,10 @@ export default function Navbar() {
           })}
         </ul>
 
-        <div className="flex justify-end">
+        <div className="hidden justify-end md:flex">
           <Button
             href="#download"
-            className="hidden !rounded-[999px] !px-6 !py-2.5 !text-base md:inline-flex"
+            className="!rounded-[999px] !px-6 !py-2.5 !text-base"
           >
             Download Now
           </Button>
@@ -96,28 +105,28 @@ export default function Navbar() {
           aria-label="Toggle menu"
           aria-expanded={menuOpen}
           onClick={() => setMenuOpen((v) => !v)}
-          className="flex size-11 flex-col items-center justify-center gap-[5px] rounded-full border border-white/10 bg-white/5 md:hidden"
+          className="flex size-10 flex-col items-center justify-center gap-[4.5px] rounded-full border border-white/10 bg-white/5 active:scale-95 md:hidden"
         >
           <span
-            className={`h-[2px] w-5 rounded bg-background transition-all duration-300 ${
-              menuOpen ? "translate-y-[7px] rotate-45" : ""
+            className={`h-[2px] w-4.5 rounded bg-background transition-all duration-300 ${
+              menuOpen ? "translate-y-[6.5px] rotate-45" : ""
             }`}
           />
           <span
-            className={`h-[2px] w-5 rounded bg-background transition-all duration-300 ${
+            className={`h-[2px] w-4.5 rounded bg-background transition-all duration-300 ${
               menuOpen ? "opacity-0" : ""
             }`}
           />
           <span
-            className={`h-[2px] w-5 rounded bg-background transition-all duration-300 ${
-              menuOpen ? "-translate-y-[7px] -rotate-45" : ""
+            className={`h-[2px] w-4.5 rounded bg-background transition-all duration-300 ${
+              menuOpen ? "-translate-y-[6.5px] -rotate-45" : ""
             }`}
           />
         </button>
 
         {/* Mobile menu panel */}
         <div
-          className={`absolute left-3 right-3 top-[calc(100%+10px)] origin-top rounded-3xl border border-white/10 bg-ink p-4 shadow-[0_24px_60px_-12px_rgba(0,0,0,0.65)] transition-all duration-300 md:hidden ${
+          className={`absolute left-0 right-0 top-[calc(100%+10px)] origin-top rounded-3xl border border-white/10 bg-ink p-4 shadow-[0_24px_60px_-12px_rgba(0,0,0,0.65)] transition-all duration-300 md:hidden ${
             menuOpen
               ? "pointer-events-auto scale-100 opacity-100"
               : "pointer-events-none scale-95 opacity-0"
@@ -130,7 +139,7 @@ export default function Navbar() {
                   href={link.href}
                   onClick={() => setMenuOpen(false)}
                   style={{ transitionDelay: menuOpen ? `${80 + i * 50}ms` : "0ms" }}
-                  className={`flex items-center justify-between rounded-2xl px-4 py-3.5 text-base font-medium transition-all duration-300 ${
+                  className={`flex items-center justify-between rounded-2xl px-4 py-3 text-base font-medium transition-all duration-300 ${
                     menuOpen ? "translate-x-0 opacity-100" : "translate-x-3 opacity-0"
                   } ${
                     active === link.href
@@ -149,7 +158,7 @@ export default function Navbar() {
               <Button
                 href="#download"
                 onClick={() => setMenuOpen(false)}
-                className="w-full justify-center !py-3.5"
+                className="w-full justify-center !py-3"
               >
                 Download Now
               </Button>

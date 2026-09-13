@@ -1,91 +1,121 @@
-import Reveal from "@/components/shared/Reveal";
+import Reveal from "@/components/motion/Reveal";
+import SectionPill from "@/components/ui/SectionPill";
 
 export default function PayLater() {
   return (
-    <section id="pay-later" className="w-full overflow-hidden py-14 sm:py-16">
-      <div className="flex w-full justify-center px-4 sm:px-8">
-        <div className="inline-flex w-[1768px] max-w-full flex-col items-center justify-start gap-16">
-          <Reveal>
-            <div className="flex w-[486px] max-w-full flex-col items-center justify-start gap-5">
-              <div className="inline-flex size-auto items-center justify-center gap-2.5 rounded-[75px] px-5 py-3.5 outline outline-8 outline-offset-[-7px] outline-yellow-400">
-                <div className="text-center text-lg font-medium leading-7 text-black">Pay Later</div>
+    <section id="pay-later" className="w-full overflow-hidden py-14 sm:py-20">
+      <div className="mx-auto flex w-[1768px] max-w-full flex-col items-center gap-14 px-4 sm:px-8">
+        {/* Header */}
+        <Reveal>
+          <div className="flex w-full max-w-2xl flex-col items-center gap-5 text-center">
+            <SectionPill>Pay Later</SectionPill>
+            <div className="flex flex-col items-center text-center">
+              <h2 className="text-3xl font-light italic leading-tight text-black sm:text-5xl lg:text-[52px]">
+                Send money <span className="font-medium not-italic text-primary">today.</span>
+              </h2>
+              <p className="mt-1 text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-[52px]">
+                Repay over time.
+              </p>
+            </div>
+          </div>
+        </Reveal>
+
+        {/* 3 Cards Grid */}
+        <div className="grid w-full grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {/* Card 1: Check Eligibility */}
+          <Reveal delay={1}>
+            <div className="group flex h-[430px] w-full select-none flex-col items-center justify-between rounded-[22px] border border-[#FCD34D] bg-[#FFFDF5] p-6 text-center transition-transform duration-500 ease-out hover:scale-[1.02] sm:p-8">
+              <div className="flex h-[250px] w-full items-center justify-center">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/images/pay-later/card.png"
+                  alt="Check eligibility card"
+                  className="max-h-[220px] w-auto object-contain transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
               </div>
-              <div className="self-stretch text-center">
-                <span className="text-5xl font-light leading-[63px] text-black">Send money </span>
-                <span className="text-5xl font-medium leading-[63px] text-yellow-400">today. </span>
-                <span className="text-5xl font-medium leading-[63px] text-black">Repay over time.</span>
+              <div className="flex flex-col items-center justify-center text-center">
+                <h3 className="text-xl font-bold tracking-tight text-black sm:text-[22px]">
+                  Check eligibility
+                </h3>
+                <p className="mt-1.5 text-sm font-normal leading-snug text-[#737373] sm:text-base">
+                  See your available limit
+                </p>
               </div>
             </div>
           </Reveal>
-          <div className="inline-flex self-stretch items-center justify-center gap-10 max-lg:flex-col">
-            <Reveal delay={1}>
-              <div className="card-hover relative h-96 w-[561px] max-w-[90vw] overflow-hidden rounded-[19px] bg-yellow-50 shadow-[0px_0px_4px_0px_rgba(0,0,0,0.25)] outline outline-1 outline-offset-[-1px] outline-yellow-400">
-                <div className="absolute left-[34px] top-[38px] h-60 w-[492.06px] max-w-[calc(100%-68px)] overflow-hidden rounded-xl bg-gradient-to-br from-gray-700 via-slate-500 to-gray-700">
-                  <div className="absolute left-[21.71px] top-[21.71px] flex w-28 flex-col items-start justify-start gap-3">
-                    <div className="text-base font-normal leading-5 text-gray-200">Available Limit</div>
-                    <div className="text-center text-4xl font-semibold leading-[47.28px] text-white">£2,500</div>
+
+          {/* Card 2: Choose a plan and send */}
+          <Reveal delay={2}>
+            <div className="group flex h-[430px] w-full select-none flex-col items-center justify-between rounded-[22px] border border-[#FCD34D] bg-[#FFFDF5] p-6 text-center transition-transform duration-500 ease-out hover:scale-[1.02] sm:p-8">
+              <div className="flex h-[250px] w-full items-center justify-center">
+                <div className="flex w-full max-w-[320px] flex-col rounded-xl bg-white p-4 text-left shadow-[0_2px_10px_rgba(0,0,0,0.06)] border border-amber-200/80 transition-transform duration-500 group-hover:scale-105">
+                  <div className="flex flex-col gap-0.5">
+                    <span className="text-base font-bold text-gray-900">
+                      Pay in Full on Salary Day
+                    </span>
+                    <span className="text-xs text-gray-400">
+                      Repay the full amount on your next salary day.
+                    </span>
                   </div>
-                  <div className="absolute left-[432.96px] top-[21.71px] h-11 w-9 bg-gray-300" />
-                  <div className="absolute left-[18.09px] top-[126.63px] h-0 w-[457.09px] outline outline-[1.21px] outline-offset-[-0.60px] outline-gray-300" />
-                  <div className="absolute left-[21.71px] top-[150.75px] flex w-28 flex-col items-start justify-start gap-3">
-                    <div className="text-base font-normal leading-5 text-gray-200">Demo Payment</div>
-                    <div className="text-2xl font-semibold leading-8 text-white">£200</div>
-                  </div>
-                  <div className="absolute left-[344.92px] top-[150.75px] flex w-32 flex-col items-start justify-start gap-3">
-                    <div className="text-right text-base font-normal leading-5 text-gray-200">Remaining Limit</div>
-                    <div className="text-right text-2xl font-semibold leading-8 text-white">£2,300</div>
-                  </div>
-                </div>
-                <div className="absolute left-1/2 top-[297px] flex w-56 -translate-x-1/2 flex-col items-center justify-start gap-5 text-center">
-                  <div className="text-3xl font-medium leading-10 text-black">Check eligibility</div>
-                  <div className="text-lg leading-7 text-stone-500">See your available limit</div>
-                </div>
-              </div>
-            </Reveal>
-            <Reveal delay={2}>
-              <div className="card-hover relative h-96 w-[561px] max-w-[90vw] overflow-hidden rounded-[19px] bg-yellow-50 shadow-[0px_0px_4px_0px_rgba(0,0,0,0.25)] outline outline-1 outline-offset-[-1px] outline-yellow-400">
-                <div className="absolute left-1/2 top-[24px] flex h-64 w-96 max-w-[calc(100%-48px)] -translate-x-1/2 flex-col overflow-hidden rounded-xl bg-white px-[15px] pb-4 pt-[13px] shadow-[0px_1px_3.9px_0px_rgba(0,0,0,0.19)] outline outline-2 outline-offset-[-1.90px] outline-yellow-100">
-                  <div className="flex flex-col items-start gap-1.5">
-                    <div className="text-xl font-medium leading-7 text-zinc-800">Pay in Full on Salary Day</div>
-                    <div className="text-xs font-normal leading-4 text-neutral-400">Repay the full amount on your next salary day.</div>
-                  </div>
-                  <div className="mt-[15px] flex flex-col gap-5 self-stretch">
-                    <div className="flex items-center justify-between">
-                      <div className="text-base font-medium leading-5 text-neutral-400">Send Amount</div>
-                      <div><span className="text-base font-medium leading-5 text-yellow-400">£</span><span className="text-base font-medium leading-5 text-stone-500"> </span><span className="text-base font-medium leading-5 text-zinc-800">200.00</span></div>
+
+                  <div className="mt-3.5 flex flex-col gap-2 text-sm">
+                    <div className="flex items-center justify-between text-gray-400">
+                      <span>Send Amount</span>
+                      <span className="font-medium text-gray-800"><span className="text-primary">£</span> 200.00</span>
                     </div>
-                    <div className="flex items-center justify-between">
-                      <div className="text-base font-medium leading-5 text-neutral-400">Fee</div>
-                      <div><span className="text-base font-medium leading-5 text-yellow-400">£</span><span className="text-base font-medium leading-5 text-stone-500"> </span><span className="text-base font-medium leading-5 text-zinc-800">4.99</span></div>
+                    <div className="flex items-center justify-between text-gray-400">
+                      <span>Fee</span>
+                      <span className="font-medium text-gray-800"><span className="text-primary">£</span> 4.99</span>
                     </div>
                   </div>
-                  <div className="mt-3 h-px self-stretch bg-zinc-400" />
-                  <div className="mt-2 flex items-center justify-between self-stretch">
-                    <div className="text-lg font-medium leading-6 text-black">Total Repayable</div>
-                    <div className="text-lg font-medium leading-6 text-yellow-400">£ 204.99</div>
+
+                  <div className="my-2.5 h-px w-full bg-gray-300" />
+
+                  <div className="flex items-center justify-between text-base font-bold">
+                    <span className="text-black">Total Repayable</span>
+                    <span className="text-primary">£ 204.99</span>
                   </div>
-                  <div className="mt-auto flex items-center justify-between self-stretch">
-                    <div className="text-base font-medium leading-5 text-neutral-400">Repayment Date</div>
-                    <div className="text-base font-medium leading-5 text-neutral-400">28 July 2026</div>
+
+                  <div className="mt-2 flex items-center justify-between text-xs text-gray-400">
+                    <span>Repayment Date</span>
+                    <span>28 July 2026</span>
                   </div>
-                </div>
-                <div className="absolute left-1/2 top-[297px] flex w-56 -translate-x-1/2 flex-col items-center justify-start gap-5 text-center">
-                  <div className="text-3xl font-medium leading-10 text-black">Choose a plan and send</div>
-                  <div className="text-lg leading-7 text-stone-500">Select 4, 6, 8 or 12 months</div>
                 </div>
               </div>
-            </Reveal>
-            <Reveal delay={3}>
-              <div className="card-hover relative h-96 w-[561px] max-w-[90vw] overflow-hidden rounded-[19px] bg-yellow-50 shadow-[0px_0px_4px_0px_rgba(0,0,0,0.25)] outline outline-1 outline-offset-[-1px] outline-yellow-400">
+              <div className="flex flex-col items-center justify-center text-center">
+                <h3 className="text-xl font-bold tracking-tight text-black sm:text-[22px]">
+                  Choose a plan and send
+                </h3>
+                <p className="mt-1.5 text-sm font-normal leading-snug text-[#737373] sm:text-base">
+                  Select 4, 6, 8 or 12 months
+                </p>
+              </div>
+            </div>
+          </Reveal>
+
+          {/* Card 3: Repay Monthly */}
+          <Reveal delay={3}>
+            <div className="group flex h-[430px] w-full select-none flex-col items-center justify-between rounded-[22px] border border-[#FCD34D] bg-[#FFFDF5] p-6 text-center transition-transform duration-500 ease-out hover:scale-[1.02] sm:p-8">
+              <div className="flex h-[250px] w-full items-center justify-center">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img className="absolute left-1/2 top-[10px] h-72 w-80 max-w-[calc(100%-40px)] -translate-x-1/2 object-contain" src="/images/pay-later/pay-later-3.png" alt="" loading="lazy" />
-                <div className="absolute left-1/2 top-[297px] flex w-56 -translate-x-1/2 flex-col items-center justify-start gap-5 text-center">
-                  <div className="text-3xl font-medium leading-10 text-black">Repay Monthly</div>
-                  <div className="text-lg leading-7 text-stone-500">Make clear, fixed monthly payments.</div>
-                </div>
+                <img
+                  src="/images/pay-later/pay-later-3.png"
+                  alt="Repay Monthly notebook"
+                  className="max-h-[220px] w-auto object-contain transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
               </div>
-            </Reveal>
-          </div>
+              <div className="flex flex-col items-center justify-center text-center">
+                <h3 className="text-xl font-bold tracking-tight text-black sm:text-[22px]">
+                  Repay Monthly
+                </h3>
+                <p className="mt-1.5 text-sm font-normal leading-snug text-[#737373] sm:text-base">
+                  Make clear, fixed monthly payments.
+                </p>
+              </div>
+            </div>
+          </Reveal>
         </div>
       </div>
     </section>
